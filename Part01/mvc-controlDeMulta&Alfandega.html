@@ -17,36 +17,76 @@
 <body>
     <main>
         <section id="login">
-            <div id="imagem">
-                <!-- Aqui vai ter uma imagem pelo CSS // Controle de Alfandega = BRASIL não é Estrangeiro// -->
-            </div>
-            <div id="formulario">
-                <h1>Parte 01 - Controle Alfandega</h1>
-                <p>Bem-vindo novamente,
-                <p>Digite a Nacionalidade sua e veremos seu Visto de permanencia !.</p>
-                <p>Nacionalidade:<input type="text" name="txtvel" id="txtvel"> <br>(Ex: US, UK, IT, KO)</p>
-                <P>Seu Nome:<br><input type="text" name="txttext" id="txttext" ><br>(Nome e Sobrenome)</p>
-                </P>
-                <input type="button" value="Verificar" onclick="calcular()">
-                <div id="resp"> </div>
+            <div id="imagem"></div>
+                
+                <div id="formulario">
 
-                <script>
-                    //precisa ser alterado os tipos de variaveis e nome dos objetos!
-                    function calcular() {
-                        var txtvel = window.document.querySelector('input#txtvel')
-                        var vel = String(txtvel.value)
-                        var resp = window.document.querySelector('div#resp')
-                        var text = String(txttext.value)
-                        var txttext = window.document.querySelector('input#txttext')
-                        /*ESSAS LINHAS RECEBEM AS VARIAVEIS DE VELOCIDADE E RETORNA A 'RESP' DO VALOR DE VELOCIDADE*/
-                        //resp.innerHTML = '<p>A velocidade do veiculo é de ' +vel+ ' Km/h</p>'
-                        if (vel > 60) {
-                            resp.innerHTML += `<p>Você foi multado por excesso de velocidade ${vel} Km/h, ${text}</p>`
-                        } else {
-                            resp.innerHTML += `<p>Você está dentro do limite de velocidade ${vel} Km/h, ${text}</p>`
+
+                    <h1>Bem Vindo ao Controle Alfândega</h1>
+                    <p>Seja muito Bem Vindo á Alfândega! Estamos aqui para ajudá-lo com suas necessidades.</p><br>
+
+                    <label for="nome"> Por Favor insira o seu Nome(a):</label><br>
+                    <input id="text" name="nome" id="nome" placeholder="Digite seu nome"><br>
+
+                    <label for="nacionalidade">Sua Nacionalidade:</label><br>
+                    <select id="nacionalidade">
+                    
+
+
+                        <option value="br">Brasileiro(a)</option>
+                        <option value="us">Americano(a)</option>
+                        <option value="uk">Irlandes</option>
+                        <option value="kr">Coreano(a)</option>
+                        <option value="mx">Mexicano(a)</option>
+                        <option value="it">Italiano(a)</option>
+                        <option value="de">Dinamarques(a)</option>
+                        <option value="cn">Chines(a)</option>
+                        <option value="za">Africano(a)</option>
+                        <option value="fr">Frances(a)</option>
+                    </select>
+
+                    <input type="button" value="Verificar" onclick="calcular()">
+
+                    <div id="resp"> </div>
+
+                    <script>
+                        function calcular() {
+                            var nome = document.querySelector('input#nome').value;
+                            var nacionalidade = document.querySelector('select#nacionalidade').value;
+                            var resp = document.querySelector('div#resp');
+
+                            resp.innerHTML = `<p> seja bem vindo(a) ao Alfandega, ${nome}!`;
+
+                            /*                        if (Nacionalidade === "br"){
+                                                     resp.innerHTML += `<p>Você é Brasileiro(a)! </p>`
+                                                    } else if (Nacionalidade === "us") {
+                                                        resp.innerHTML += `<p>Você é estrangeiro(a)! </p>`
+                                                    } else if (Nacionalidade === "uk") {
+                                                        resp.innerHTML += `<p>Você é estrangeiro(a)! </p>`
+                                                    } else if (Nacionalidade === "kr") {
+                                                        resp.innerHTML += `<p>Você é estrangeiro(a)! </p>`
+                                                    } else if (Nacionalidade === "mx") {
+                                                        resp.innerHTML += `<p>Você é estrangeiro(a)! </p>`
+                                                    } else if (Nacionalidade === "it") {
+                                                        resp.innerHTML += `<p>Você é estrangeiro(a)! </p>`
+                                                    } else if (Nacionalidade === "de") {
+                                                        resp.innerHTML += `<p>Você é estrangeiro(a)! </p>` 
+                                                    } else if (Nacionalidade === "cn") {
+                                                        resp.innerHTML += `<p>Você é estrangeiro(a)! </p>`
+                                                    } else if (Nacionalidade === "za") {     
+                                                        resp.innerHTML += `<p>Você é estrangeiro(a)! </p>`
+                                                    } else if (Nacionalidade === "fr") {     
+                                                        resp.innerHTML += `<p>Você é estrangeiro(a)! </p>`
+                                                }*/
+                            if (nacionalidade === `br`) {
+                                resp.innerHTML += `<p>Você é Brasileiro(a)! </p>`
+                            } else {
+                                resp.innerHTML += `<p>Você é Estrangeiro(a)! </p>`
+                            }
                         }
-                    }
-                </script>
+
+
+                    </script>
 
         </section>
     </main>

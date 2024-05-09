@@ -171,7 +171,7 @@ form>a.botao>span {
         width: 70%;
     }
 }
-/*medidas do monitor*/
+/*medidas do monitor "computador"*/
 
 @media screen and (min-width: 992px) {
     body {
